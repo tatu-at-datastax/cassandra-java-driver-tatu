@@ -165,7 +165,7 @@ public class DefaultCodecRegistry extends CachingCodecRegistry {
       int h2 = Objects.hashCode(javaType);
       int h3 = Boolean.hashCode(isJavaCovariant);
 
-      return 31 * (31 * h1 + h2) + h3;
+      return ((31 + h1) * 31 + h2) * 31 + h3;
     }
   }
 }
